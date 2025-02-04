@@ -22,7 +22,7 @@
 		  ("tennis-silver"   . "#9da9a0")
 		  ("tennis-black"    . "#173030")
 		  ("tennis-border"   . "#142424")
-		  ("tennis-visual"   . "#325252"))))
+		  ("tennis-visual"   . "#1c4040"))))
     colors)
   "List of tennis Colors.")
 
@@ -77,10 +77,10 @@
    `(solaire-fringe-face  ((t (:foreground ,tennis-silver))))
 
    ;; mode-line
-   `(mode-line           ((t (:background ,tennis-visual :foreground ,tennis-silver))))
+   `(mode-line           ((t (:background ,tennis-gutter :foreground ,tennis-silver))))
    `(mode-line-buffer-id ((t (:weight bold))))
    `(mode-line-emphasis  ((t (:weight bold))))
-   `(mode-line-inactive  ((t (:background ,tennis-gutter :foreground ,tennis-silver))))
+   `(mode-line-inactive  ((t (:background ,tennis-visual :foreground ,tennis-silver))))
 
    ;; window-divider
    `(window-divider             ((t (:foreground ,tennis-border))))
