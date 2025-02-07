@@ -10,7 +10,7 @@
 		  ("tennis-gutter"   . "#142424")
 		  ("tennis-mono-1"   . "#abb2bf")
 		  ("tennis-mono-2"   . "#503946")
-		  ("tennis-mono-3"   . "#47c987")
+		  ("tennis-mono-3"   . "#36e381")
 		  ("tennis-cyan"     . "#83c092")
 		  ("tennis-blue"     . "#7fbbb3")
 		  ("tennis-purple"   . "#d699b6")
