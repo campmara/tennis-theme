@@ -2,37 +2,38 @@
   "tennis - A custom emacs theme for Mara based on her personal preferences.")
 
 (defvar tennis-colors-alist
-  (let ((colors `(("tennis-accent"   . "#a7c080")
-		  ("tennis-fg"       . "#c4d3aa")
-		  ("tennis-bg"       . "#173030")
-		  ("tennis-bg-1"     . "#325252")
-		  ("tennis-bg-hl"    . "#3a454a")
-		  ("tennis-gutter"   . "#142424")
-		  ("tennis-mono-1"   . "#abb2bf")
-		  ("tennis-mono-2"   . "#503946")
-		  ("tennis-mono-3"   . "#36e381")
-		  ("tennis-cyan"     . "#83c092")
-		  ("tennis-blue"     . "#7fbbb3")
-		  ("tennis-purple"   . "#d699b6")
-		  ("tennis-green"    . "#a7c080")
-		  ("tennis-red"      . "#e67e80")
-		  ("tennis-orange"   . "#e69875")
-		  ("tennis-yellow"   . "#ddbc7f")
-		  ("tennis-gray"     . "#325252")
-		  ("tennis-silver"   . "#9da9a0")
-		  ("tennis-black"    . "#173030")
-		  ("tennis-border"   . "#142424")
-		  ("tennis-visual"   . "#1c4040"))))
-    colors)
-  "List of tennis Colors.")
+    (let ((colors `(("tennis-accent"   . "#a7c080")
+                    ("tennis-fg"       . "#c4d3aa")
+                    ("tennis-bg"       . "#173030")
+                    ("tennis-bg-1"     . "#325252")
+                    ("tennis-bg-hl"    . "#3a454a")
+                    ("tennis-gutter"   . "#142424")
+                    ("tennis-mono-1"   . "#abb2bf")
+                    ("tennis-mono-2"   . "#503946")
+                    ("tennis-mono-3"   . "#36e381")
+                    ("tennis-cyan"     . "#83c092")
+                    ("tennis-blue"     . "#7fbbb3")
+                    ("tennis-purple"   . "#d699b6")
+                    ("tennis-green"    . "#a7c080")
+                    ("tennis-red"      . "#e67e80")
+                    ("tennis-orange"   . "#e69875")
+                    ("tennis-yellow"   . "#ddbc7f")
+                    ("tennis-gray"     . "#325252")
+                    ("tennis-silver"   . "#9da9a0")
+                    ("tennis-black"    . "#173030")
+                    ("tennis-border"   . "#142424")
+                    ("tennis-visual"   . "#1c4040"))))
+        colors)
+    "List of tennis Colors."
+)
 
 (defmacro tennis-with-color-variables (&rest body)
   "Bind the colors list around BODY."
   (declare (indent 0))
   `(let ((class '((class color) (min-colors 89)))
-	 ,@ (mapcar (lambda (cons)
-		      (list (intern (car cons)) (cdr cons)))
-		    tennis-colors-alist))
+     ,@ (mapcar (lambda (cons)
+              (list (intern (car cons)) (cdr cons)))
+            tennis-colors-alist))
      ,@body))
 
 (tennis-with-color-variables
@@ -58,7 +59,7 @@
    `(tooltip             ((t (:foreground ,tennis-fg :background ,tennis-bg-1 :inherit variable-pitch))))
 
    `(font-lock-builtin-face           ((t (:foreground ,tennis-cyan))))
-   `(font-lock-comment-face           ((t (:foreground ,tennis-mono-3 :slant italic))))
+   `(font-lock-comment-face           ((t (:foreground ,tennis-mono-3 :slant 'normal))))
    `(font-lock-comment-delimiter-face ((default (:inherit (font-lock-comment-face)))))
    `(font-lock-doc-face               ((t (:inherit (font-lock-string-face)))))
    `(font-lock-function-name-face     ((t (:foreground ,tennis-green))))
@@ -111,9 +112,9 @@
    `(centaur-tabs-selected          ((t (:background ,tennis-bg :foreground ,tennis-fg :weight bold))))
    `(centaur-tabs-unselected        ((t (:background ,tennis-black :foreground ,tennis-fg :weight light))))
    `(centaur-tabs-selected-modified ((t (:background ,tennis-bg
-					 :foreground ,tennis-blue :weight bold))))
+                     :foreground ,tennis-blue :weight bold))))
    `(centaur-tabs-unselected-modified ((t (:background ,tennis-black :weight light
-					   :foreground ,tennis-blue))))
+                       :foreground ,tennis-blue))))
    `(centaur-tabs-active-bar-face            ((t (:background ,tennis-accent))))
    `(centaur-tabs-modified-marker-selected   ((t (:inherit 'centaur-tabs-selected :foreground,tennis-accent))))
    `(centaur-tabs-modified-marker-unselected ((t (:inherit 'centaur-tabs-unselected :foreground,tennis-accent))))
@@ -189,14 +190,14 @@
 
    ;; helm
    `(helm-header ((t (:foreground ,tennis-mono-2
-		      :background ,tennis-bg
-		      :underline nil
-		      :box (:line-width 6 :color ,tennis-bg)))))
+              :background ,tennis-bg
+              :underline nil
+              :box (:line-width 6 :color ,tennis-bg)))))
    `(helm-source-header ((t (:foreground ,tennis-yellow
-			     :background ,tennis-bg
-			     :underline nil
-			     :weight bold
-			     :box (:line-width 6 :color ,tennis-bg)))))
+                 :background ,tennis-bg
+                 :underline nil
+                 :weight bold
+                 :box (:line-width 6 :color ,tennis-bg)))))
    `(helm-selection                    ((t (:background ,tennis-gray))))
    `(helm-selection-line               ((t (:background ,tennis-gray))))
    `(helm-visible-mark                 ((t (:background ,tennis-bg :foreground ,tennis-yellow))))
@@ -617,7 +618,7 @@
    ;; realgud
    `(realgud-overlay-arrow1        ((t (:foreground ,tennis-green))))
    `(realgud-overlay-arrow3        ((t (:foreground ,tennis-orange))   `(realgud-overlay-arrow2        ((t (:foreground ,tennis-yellow))))
-				    ))
+                    ))
    '(realgud-bp-enabled-face       ((t (:inherit (error)))))
    `(realgud-bp-disabled-face      ((t (:inherit (secondary-selection)))))
    `(realgud-bp-line-enabled-face  ((t (:box (:color ,tennis-red)))))
@@ -758,14 +759,14 @@
    ;; ansi-color
    `(ansi-color-names-vector
      [,tennis-black ,tennis-red ,tennis-green ,tennis-yellow
-				  ,tennis-blue ,tennis-purple ,tennis-cyan ,tennis-fg])))
+                  ,tennis-blue ,tennis-purple ,tennis-cyan ,tennis-fg])))
 
 ;;;###autoload
 (and load-file-name
      (boundp 'custom-theme-load-path)
      (add-to-list 'custom-theme-load-path
-		  (file-name-as-directory
-		   (file-name-directory load-file-name))))
+          (file-name-as-directory
+           (file-name-directory load-file-name))))
 ;; Automatically add this theme to the load path
 
 (provide-theme 'tennis)
